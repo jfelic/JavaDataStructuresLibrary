@@ -1,18 +1,18 @@
+# Java Data Structures Library
+
+This is a Java Data Structures Library, designed as an educational resource for those seeking to learn more about data structures and their implementations in Java. The library includes implementations of various data structures including Linked Lists, Stacks, Queues, Hash Tables, and Binary Trees.
+
+## Features
+
+- **Generic Implementations**: The data structures are implemented generically to handle different types of data.
+- **Comprehensive Documentation**: Each method and class is documented to explain its function and usage.
+- **Unit Tests**: Tests are included to verify the correctness of each data structure.
+- **Performance Benchmarks**: (If applicable) Benchmarks illustrating the performance characteristics of each data structure.
+
 ## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+To get a local copy up and running, follow these simple steps.
 
-## Folder Structure
+### Prerequisites
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- Java JDK 11 or newer.
