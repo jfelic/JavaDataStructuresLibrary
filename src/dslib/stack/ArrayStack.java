@@ -1,4 +1,3 @@
-
 package dslib.stack;
 
 import dslib.interfaces.StackInterface;
