@@ -6,6 +6,7 @@ public class ArrayStack<E> implements StackInterface<E> {
     private int maxSize; //size of stack array
     private E[] stackArray;
     private int top; //top of stack
+    private int numElems; //number of elements in the array
 
     public ArrayStack(int maxSize) {
         this.maxSize = maxSize; //set array size
@@ -21,6 +22,7 @@ public class ArrayStack<E> implements StackInterface<E> {
             throw new IllegalStateException("Stack is full, cannot push");
         }
         stackArray[++top] = item;
+        numElems++;
     }
 
     @Override
@@ -31,14 +33,27 @@ public class ArrayStack<E> implements StackInterface<E> {
         }
         E temp = stackArray[top];
         top--;
+        numElems--;
         return temp;
     }
 
+    @Override
+    public E peek() {
+        return stackArray[top];
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return top == -1;
+    }
+
+    @Override
     public boolean isFull() {
         return top >= maxSize - 1;
     }
 
-    public boolean isEmpty() {
-        return top == -1;
+    @Override
+    public int size() {
+        return numElems;
     }
 }
