@@ -16,3 +16,6 @@ To get a local copy up and running, follow these simple steps.
 ### Prerequisites
 
 - Java JDK 11 or newer.
+
+##### Author:
+Julian Feliciano (solo project)
