@@ -19,3 +19,4 @@ To get a local copy up and running, follow these simple steps.
 
 ##### Author:
 Julian Feliciano (solo project)
+- Java JDK 11 or newer.
