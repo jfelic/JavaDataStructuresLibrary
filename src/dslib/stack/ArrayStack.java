@@ -10,7 +10,7 @@ public class ArrayStack<E> implements StackInterface<E> {
     public ArrayStack(int maxSize) {
         this.maxSize = maxSize; //set array size
         //Create Array
-        stackArray = ([E]) new Object[maxSize];//we cannot directly create an array of generic type
+        stackArray = (E[]) new Object[maxSize];//we cannot directly create an array of generic type
                                                //so we need to typecast an Array of Objects to generic
         top = -1; //no items yet
     }
@@ -18,18 +18,16 @@ public class ArrayStack<E> implements StackInterface<E> {
     @Override
     public void push(E item) {
         if( isFull() ) {
-            System.out.println("Stack is full, cannot push");
-            return;
+            throw new IllegalStateException("Stack is full, cannot push");
         }
-        stackArray[top + 1] = item;
-        top++;
+        stackArray[++top] = item;
     }
 
     @Override
     public E pop() {
         if( isEmpty() ) {
             System.out.println("Stack is empty, cannot pop");
-            return;
+            return null;
         }
         E temp = stackArray[top];
         top--;
@@ -37,16 +35,10 @@ public class ArrayStack<E> implements StackInterface<E> {
     }
 
     public boolean isFull() {
-        if(top >= maxSize - 1)
-            return true;
-        else
-            return false;
+        return top >= maxSize - 1;
     }
 
     public boolean isEmpty() {
-        if(top == -1) 
-            return true;
-        else
-            return false;
+        return top == -1;
     }
 }
