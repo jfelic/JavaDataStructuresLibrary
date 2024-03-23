@@ -61,14 +61,60 @@ public class LinkedList<E> implements LinkedListInterface<E> {
     public boolean remove(int key) {
         Node<E> current = head;
 
-        while(current.key != key) {
-            if(current == null)
-                return false; //not found
-            else
-                current = current.next;
+        if(head == null)//empty list
+            return false;
 
-            /* ENTER TO REMOVE HERE */
+        //find the Node
+        while(current != null && current.key != key) {
+            current = current.next;
         }
-        return true; //found and removed
+
+        if(current == null)//if current is null, the Node wasn't found
+            return false;
+
+        //If we've gotten this far, current holds the Node that we are looking to remove
+        if(current == head) { //if removing the head Node
+            head = current.next;
+            head.previous = null;
+        } else if(current == tail) {//else if removing the tail Node
+            tail = current.previous;
+            tail.next = null;
+        } else {//else removing inner Node
+            Node<E> nextNode = current.next;
+            Node<E> previousNode = current.previous;
+
+            previousNode.next = nextNode;
+            nextNode.previous = previousNode;
+        }
+        return true; //successfully removed the Node
+    }
+
+    @Override
+    public void displayList() {
+        Node current = head;
+
+        while(current != null) {
+            current.displayNode();
+            current = current.next;
+        }
+    }
+
+    public void displayListBackwards() {
+        Node current = tail;
+
+        while(current != null) {
+            current.displayNode();
+            current = current.previous;
+        }
+    }
+
+    @Override
+    public Node<E> peekHead() {
+        return head; //placeholder
+    }
+
+    @Override
+    public Node<E> peekTail() {
+        return tail; //placeholder
     }
 }

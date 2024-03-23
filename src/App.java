@@ -1,3 +1,4 @@
+import dslib.linkedlist.LinkedList;
 import dslib.linkedlist.Node;
 import dslib.stack.ArrayStack;
 
@@ -29,6 +30,19 @@ public class App {
         nodeB.displayNode();
         nodeC.displayNode();
         nodeD.displayNode();
+
+        LinkedList<Integer> theList = new LinkedList<>(); //create new linked list to hold Integers
+
+        theList.addFirst(1, 10);
+        theList.addFirst(2, 20);
+        theList.addFirst(3, 30);
+        theList.addFirst(4, 40);
+        theList.displayList();
+        theList.displayListBackwards();
+
+        System.out.println(theList.remove(3));
+
+        theList.displayList();
         // end of linkedlist //
     }
 }
