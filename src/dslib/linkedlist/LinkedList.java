@@ -43,6 +43,8 @@ public class LinkedList<E> implements LinkedListInterface<E> {
 
     @Override
     public Node<E> removeHead() {
+        if(head == null)
+            return null; //empty list
         Node<E> removed = head; //need to store current head to return it later
         head = head.next;
         head.previous = null;
@@ -51,6 +53,8 @@ public class LinkedList<E> implements LinkedListInterface<E> {
 
     @Override
     public Node<E> removeTail() {
+        if(tail == null)
+            return null; //empty list
         Node<E> removed = tail;
         tail = tail.previous;
         tail.next = null;
