@@ -31,6 +31,7 @@ public class ArrayQueue<E> implements QueueInterface<E> {
             System.out.println("Queue is full");
     }
 
+    @Override
     public E dequeue() {
         if(front == maxSize) //handle wraparound
             front = 0;
@@ -40,18 +41,22 @@ public class ArrayQueue<E> implements QueueInterface<E> {
         return temp;
     }
 
+    @Override
     public E peek() {
         return queueArray[front];
     }
 
+    @Override
     public boolean isEmpty() {
         return (numElems == 0);
     }
 
+    @Override
     public boolean isFull() {
         return (numElems == maxSize - 1);
     }
 
+    @Override
     public int size() {
         return numElems;
     }
